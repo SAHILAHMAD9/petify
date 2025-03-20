@@ -2,7 +2,6 @@
 
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import React, { useCallback, useEffect, useRef } from "react";
-
 import { cn } from "@/lib/utils";
 import { GlowingEffect } from "./GlowingEffect";
 
@@ -70,7 +69,7 @@ export function MagicCard({
         <div
             ref={cardRef}
             className={cn("group relative flex size-full rounded-xl", className)}>
-            <div className="absolute inset-px z-10 rounded-xl bg-background" />
+            <div className="absolute inset-px z-10 rounded-xl bg-[#202c54]" />
             <div className="relative z-30">
             {children}</div>
             <motion.div

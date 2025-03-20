@@ -2,11 +2,12 @@
 import CTA from "@/components/cta";
 import { Highlight, HeroHighlight } from "@/components/ui/Highlight";
 import { MagicCard } from "@/components/ui/magicCard";
-
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className=" flex flex-col items-center justify-items-center px-4 font-[family-name:var(--font-geist-sans)]">
+    {/* <AbortController></AbortController> */}
 
       <div className="flex  gap-4 items-center justify-center w-full my-4">
         <HeroHighlight>
@@ -15,32 +16,35 @@ export default function Home() {
       </div>
       <div className="flex z-30 items-center justify-center w-full text-white flex-col py-20 px-4 gap-4 m-0 ">
         <div>
-          <h1 className="text-3xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">Why Choose Petify?</h1>
+          <h1 className="text-3xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-b from-black to-neutral-500">Why Choose Petify?</h1>
         </div>
         <div className="flex gap-4">
 
-          <MagicCard className="cursor-pointer flex flex-col h-[18rem] items-center justify-center whitespace-normal shadow-2xl px-4 overflow-hidden text-center" gradientColor="#262626">
+          <MagicCard className="cursor-pointer flex flex-col h-[18rem] items-center justify-center whitespace-normal shadow-2xl px-4 overflow-hidden text-center" gradientColor="#dec686">
           <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+          <Image src='/assets/image/cat1.jpg' layout="fill"
+    objectFit="cover" 
+    className="rounded-full" alt="cat1"/>
           </div>
-          <h3 className="text-xl font-semibold mb-4">Easy Search</h3>
+          <h3 className="text-xl font-semibold text-[#2a52be] mb-4">Easy Search</h3>
           <p className="text-gray-400">Find the perfect pet or owner with our advanced search features.</p>
           </MagicCard>
 
-          <MagicCard className="cursor-pointer flex flex-col h-[18rem] items-center justify-center whitespace-normal shadow-2xl px-4 overflow-hidden text-center" gradientColor="#262626">
+          <MagicCard className="cursor-pointer flex flex-col h-[18rem] items-center justify-center whitespace-normal shadow-2xl px-4 overflow-hidden text-center " gradientColor="#ec4899">
           <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
           </div>
           <h3 className="text-xl font-semibold mb-4">Direct Communication</h3>
           <p className="text-gray-400">Connect directly with pet owners or potential adopters.</p>
           </MagicCard>
 
-          <MagicCard className="cursor-pointer flex flex-col h-[18rem] items-center justify-center whitespace-normal shadow-2xl px-4 overflow-hidden text-center" gradientColor="#262626">
+          <MagicCard className="cursor-pointer flex flex-col h-[18rem] items-center justify-center whitespace-normal shadow-2xl px-4 overflow-hidden text-center" gradientColor="#0891b2">
           <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
           </div>
           <h3 className="text-xl font-semibold mb-4">Loving Homes</h3>
           <p className="text-gray-400">Ensure your pet finds a caring and suitable new family.</p>
           </MagicCard>
 
-          <MagicCard className="cursor-pointer flex flex-col h-[18rem] items-center justify-center whitespace-normal shadow-2xl px-4 overflow-hidden text-center" gradientColor="#262626">
+          <MagicCard className="cursor-pointer flex flex-col h-[18rem] items-center justify-center whitespace-normal shadow-2xl px-4 overflow-hidden text-center" gradientColor="#c084fc">
           <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
           </div>
           <h3 className="text-xl font-semibold mb-4">Secure Platform</h3>
@@ -50,7 +54,7 @@ export default function Home() {
       </div>
       <div className="flex z-30 items-center justify-center w-full text-white flex-col gap-4 py-20 px-4 m-0 ">
         <div>
-          <h1 className="text-3xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">How Petify Works</h1>
+          <h1 className="text-3xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-b from-black to-neutral-500">How Petify Works</h1>
         </div>
         <div className="flex gap-4">
 
@@ -80,7 +84,7 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <div className="flex z-30 items-center justify-center w-full text-white flex-col gap-8 py-20 px-4">
-        <h2 className="text-3xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 font-bold text-center mb-12">What Pet Lovers Say</h2>
+        <h2 className="text-3xl bg-clip-text text-transparent bg-gradient-to-b from-black to-neutral-500 font-bold text-center mb-12">What Pet Lovers Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl">
           <div className="bg-gray-900/30 p-8 rounded-2xl">
             <p className="text-gray-300 mb-6">"Petify made it so easy to find a loving home for my dog when I had to move abroad. I'm grateful for this platform!"</p>

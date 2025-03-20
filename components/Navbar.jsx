@@ -4,7 +4,7 @@ import ShimmerButton from "./ui/Button";
 
 export const Navbar = () => {
   return (
-    <div className="flex flex-wrap z-30 items-center justify-between bg-gradient-to-r from-gray-950 to-gray-900 md:p-3 p-2">
+    <div className="flex flex-wrap z-[9999] sticky top-0 items-center min-w-full justify-between bg-gradient-to-r to-[#A1B4C8] from-[#202c54] md:p-3 p-2">
       {/* Logo Section */}
       <Link href='/'>
         <div className="flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-bold relative">

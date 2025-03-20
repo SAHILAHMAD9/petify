@@ -25,11 +25,11 @@ const Footer = () => {
           </div>
             </div>
             <nav className="flex flex-wrap justify-center md:justify-end space-x-4 mb-4 md:mb-0">
-              <a href="#features" className="hover:text-primary transition-colors">Features</a>
-              <a href="#how-it-works" className="hover:text-primary transition-colors">How It Works</a>
-              <a href="#testimonials" className="hover:text-primary transition-colors">Testimonials</a>
-              <a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a>
+              <a href="" className="hover:text-primary transition-colors">Features</a>
+              <a href="" className="hover:text-primary transition-colors">How It Works</a>
+              <a href="" className="hover:text-primary transition-colors">Testimonials</a>
+              <a href="" className="hover:text-primary transition-colors">Privacy Policy</a>
+              <a href="" className="hover:text-primary transition-colors">Terms of Service</a>
             </nav>
           </div>
          

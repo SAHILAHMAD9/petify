@@ -25,17 +25,17 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="relative z-10 min-h-screen flex flex-col">
-        <MouseMoveEffect />
-      <div className=" z-0 fixed inset-0">
-        <div className="absolute z-0 inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
-        <div className="absolute z-0 right-0 top-0 h-[500px] w-[500px] bg-blue-500/10 blur-[100px]" />
-        <div className="absolute z-0 bottom-0 left-0 h-[500px] w-[500px] bg-purple-500/10 blur-[100px]" />
-      </div>
-        <Navbar/>
-          <main className="flex-1">{children}</main>
-          <div className="relative z-20">
-            <Footer />
+        <div className="relative min-h-screen bg-[#f0faff] flex flex-col">
+          <MouseMoveEffect />
+          <div className=" z-0 fixed inset-0">
+            <div className="absolute inset-0 bg-[#f0faff] " />
+            <div className="absolute right-0 top-0 h-[500px] w-[500px] bg-purple-500/30 blur-[100px]" />
+            <div className="absolute bottom-0 left-0 h-[500px] w-[500px] bg-[#ceefce] blur-[100px]" />
+          </div>
+          <Navbar/>
+            <main className="flex z-0 items-center justify-center">{children}</main>
+            <div className="relative z-10">
+              <Footer />
           </div>
         </div>
       </body>
