@@ -4,72 +4,54 @@ import Label from '@/components/ui/Label';
 import Input from '@/components/ui/Input';
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from 'next/image';
 
  const Page = () => {
   return (
-      <div className='min-h-screen min-w-full flex justify-center justify-items-center'>
-          <div className="mx-auto w-full rounded-2xl p-4 md:p-8 shadow-input bg-black">
-              <h2 className="font-bold text-xl font-mono sm:text-2xl text-neutral-200">
-                  Welcome
+      <div className="min-h-screen  flex flex-col justify-center items-center min-w-[1000px]">
+          <div
+              className="shadow-input mx-auto w-full relative bg-[#ffffff] max-w-md rounded-none p-4 md:rounded-xl md:p-8">
+              <Image width={450} height={200} className="roudnded-xl absolute left-0 -top-[88px]" src='/assets/image/signupImage.jpeg' />
+              <h2 className="text-xl font-bold text-neutral-800 ">
+                  Welcome Back
               </h2>
-              <p className="text-xs sm:text-sm max-w-sm mt-2 text-neutral-300">
-                  Log In to Petify
+              <p className="mt-2 max-w-sm text-sm text-neutral-600 ">
+                  Login to Petify
               </p>
-
-              <form className="my-6 sm:my-8">
+              <form className="my-8">
                   <LabelInputContainer className="mb-4">
-                      <Label className='text-white text-sm sm:text-base' htmlFor="email">Email Address</Label>
-                      <Input
-                        //   onChange={changeHandler}
-                          name="email"
-                        //   value={Form.email}
-                          id="email"
-                          placeholder="sahilahmad3504@gmail.com"
-                          type="email"
-                          className="text-sm sm:text-base"
-                          autoComplete="new-email"
-                      />
+                      <Label htmlFor="email">Email Address</Label>
+                      <Input id="email" placeholder="petify@gmail.com" type="email" />
                   </LabelInputContainer>
-
                   <LabelInputContainer className="mb-4">
-                      <Label className='text-white text-sm sm:text-base' htmlFor="password">Password</Label>
-                      <Input
-                        //   onChange={changeHandler}
-                          name="password"
-                        //   value={Form.password}
-                          id="password"
-                          placeholder="••••••••"
-                          type="password"
-                          className="text-sm sm:text-base"
-                          autoComplete="new-password"
-                      />
+                      <Label htmlFor="password">Password</Label>
+                      <Input id="password" placeholder="••••••••" type="password" />
                   </LabelInputContainer>
 
                   <button
-                      className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset]"
+                      className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
                       type="submit">
                       Log In &rarr;
                       <BottomGradient />
                   </button>
 
-                  <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-6 sm:my-8 h-[1px] w-full" />
-              </form>
+                  <div
+                      className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
 
-              <div className="flex flex-col space-y-3 sm:space-y-4">
-                  
-                  <button
-                    //   onClick={() => signIn('google')}
-                      className="relative group/btn flex space-x-2 items-center justify-start px-3 sm:px-4 w-full text-black rounded-md h-9 sm:h-10 font-medium bg-zinc-900 shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-                      type="submit">
-                      {/* <IconBrandGoogle className="h-4 w-4 text-neutral-300" /> */}
-                      <span className="text-neutral-300 text-xs sm:text-sm">
-                          Google
-                      </span>
-                      <BottomGradient />
-                  </button>
-              </div>
+                  <div className="flex flex-col space-y-4">
+                      <button
+                          className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
+                          type="submit">
+                          {/* <IconBrandGoogle className="h-4 w-4 text-neutral-800 dark:text-neutral-300" /> */}
+                          <span className="text-sm text-neutral-700 dark:text-neutral-300">
+                              Google
+                          </span>
+                          <BottomGradient />
+                      </button>
+                  </div>
+              </form>
           </div>
-</div>
+      </div>
   )
 }
 export default Page;

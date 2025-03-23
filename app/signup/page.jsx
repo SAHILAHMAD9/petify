@@ -3,6 +3,7 @@ import React from "react";
 import Label from "@/components/ui/Label";
 import Input from '@/components/ui/Input';
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 
 const Page = () => {
@@ -11,9 +12,10 @@ const Page = () => {
         console.log("Form submitted");
     };
     return (
-        <div className="min-h-screen flex justify-center items-center min-w-[1000px]">
+        <div className="min-h-screen  flex flex-col justify-center items-center min-w-[1000px]">
         <div
-                className="shadow-input mx-auto w-full bg-[#77b9da] max-w-md rounded-none p-4 md:rounded-2xl md:p-8">
+                className="shadow-input mx-auto w-full relative bg-[#ffffff] max-w-md rounded-none p-4 md:rounded-xl md:p-8">
+            <Image width={450} height={200} className="roudnded-xl absolute left-0 -top-[88px]" src='/assets/image/signupImage.jpeg'/>
             <h2 className="text-xl font-bold text-neutral-800 ">
                 Welcome to Petify
             </h2>
