@@ -1,4 +1,5 @@
 import React from 'react'
+import InteractiveHoverButton from './Button2';
 
 const EnhancedPetCard = ({ image, name, type, breed, age, location, price }) => {
     return (
@@ -43,15 +44,15 @@ const EnhancedPetCard = ({ image, name, type, breed, age, location, price }) => 
                         {type}
                     </div>
                     <div className="flex items-center gap-2 text-gray-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 24 24" fill="none" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 24 24" fill="none" stroke="#9333ea" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         {location}
                     </div>
                 </div>
                 <div className="flex justify-between items-center pt-4 border-t">
                     <span className="font-semibold text-lg text-purple-600">{price}</span>
-                    {/* <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+                    <InteractiveHoverButton className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
                         View Details
-                    </Button> */}
+                    </InteractiveHoverButton>
                 </div>
             </div>
         </div>
