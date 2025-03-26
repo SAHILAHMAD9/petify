@@ -13,16 +13,16 @@ export default function Home() {
     <div className=" flex flex-col items-center justify-items-center font-[family-name:var(--font-geist-sans)]">
     {/* <AbortController></AbortController> */}
 
-      <div className="flex  gap-4 items-center justify-center w-full my-4">
+      <div className="flex  gap-4 items-center justify-center w-full min-h-screen my-4">
         <HeroHighlight>
           <CTA />
         </HeroHighlight>
       </div>
 
       <FeaturingPets/>
-      <div className="flex z-30 items-center justify-center w-full text-white flex-col py-20 px-8 gap-4 m-0 ">
+      <div className="flex z-0 items-center justify-center w-full text-white flex-col py-20 px-8 gap-4 m-0 ">
         <div>
-          <h1 className="text-3xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-b from-black to-neutral-500">Why Choose Petify?</h1>
+          <h1 className="text-4xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-b from-black to-neutral-500">Why Choose Petify?</h1>
         </div>
         <div className="flex gap-4">
 
@@ -36,7 +36,7 @@ export default function Home() {
           
         </div>
       </div>
-      <div className="flex z-30 items-center justify-center w-full text-white flex-col gap-4 py-20 px-4 m-0 ">
+      <div className="flex z-0 items-center justify-center w-full text-white flex-col gap-4 py-20 px-4 m-0 ">
         <div>
           <h1 className="text-3xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-b from-black to-neutral-500">How Petify Works</h1>
         </div>
@@ -53,7 +53,7 @@ export default function Home() {
       
 
       {/* Testimonials Section */}
-      <div className="flex z-30 items-center justify-center w-full text-white flex-col gap-8 py-20 px-4">
+      <div className="flex z-0 items-center justify-center w-full text-white flex-col gap-8 py-20 px-4">
         <h2 className="text-3xl bg-clip-text text-transparent bg-gradient-to-b from-black to-neutral-500 font-bold text-center mb-12">What Pet Lovers Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl">
           <TestimotinalCard feedback={"Petify made it so easy to find a loving home for my dog when I had to move abroad. I'm grateful for this platform!"} name={'Sarah Johnson'} owner={'Dog Owner'} />

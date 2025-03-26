@@ -33,10 +33,9 @@ export default function RootLayout({ children }) {
             <div className="absolute bottom-0 left-0 h-[500px] w-[500px] bg-[#ceefce] blur-[100px]" />
           </div>
           <Navbar/>
-            <main className="flex z-0 items-center justify-center">{children}</main>
-            <div className="relative z-10">
-              <Footer />
-          </div>
+            <main className="flex items-center justify-center min-h-screen">{children}</main>
+          <Footer />
+         
         </div>
       </body>
     </html>

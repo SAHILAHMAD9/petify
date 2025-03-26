@@ -29,8 +29,8 @@ const CTA = function () {
         Make a purr-fect connection today!
         </Highlight>
        <div className="flex text-white gap-2">
-       <ShimmerButton className="text-white font-semibold">Browse Pets</ShimmerButton>
-       <ShimmerButton className="text-white font-semibold">List Your Pet</ShimmerButton>
+       <ShimmerButton href='/home' className="text-white font-semibold">Browse Pets</ShimmerButton>
+          <ShimmerButton href='/home' className="text-white font-semibold">List Your Pet</ShimmerButton>
        </div>
       </div>
     </section>

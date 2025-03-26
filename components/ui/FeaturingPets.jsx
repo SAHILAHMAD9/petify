@@ -3,7 +3,7 @@ import EnhancedPetCard from "@/components/ui/Petcard";
 
 const FeaturingPets = () => {
   return (
-      <section className="py-24 w-full bg-white">
+      <section className="py-24 w-full z-0 bg-white">
           <div className="mx-auto px-4">
               <div className="flex justify-between items-center mb-16">
                   <div className='flex justify-center items-center flex-col '>
