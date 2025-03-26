@@ -8,7 +8,7 @@ import Image from 'next/image';
 
  const Page = () => {
   return (
-      <div className="min-h-screen  flex flex-col justify-center items-center min-w-[1000px]">
+      <div className="min-h-screen  flex  justify-center items-center min-w-[1080px]">
           <div
               className="shadow-input mx-auto w-full relative bg-[#ffffff] max-w-md rounded-none p-4 md:rounded-xl md:p-8">
               <Image width={450} height={200} className="roudnded-xl absolute left-0 -top-[88px]" src='/assets/image/signupImage.jpeg' />
@@ -51,6 +51,9 @@ import Image from 'next/image';
                   </div>
               </form>
           </div>
+          {/* <div className='flex justify-center items-center'>
+              <Image alt='cat' src={'/assets/image/LoginSide.jpeg'} width={400} height={400} className='rounded-2xl '/>
+        </div> */}
       </div>
   )
 }

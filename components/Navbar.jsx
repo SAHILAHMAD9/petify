@@ -41,8 +41,8 @@ export const Navbar = () => {
         {/* Buttons Section */}
         <div className="flex relative px-6 gap-2 sm:gap-4 items-center sm:mt-0">
           {/* Sign Up Button Placeholder */}
-          <ShimmerButton className="text-white ">Register </ShimmerButton>
-          <ShimmerButton className="text-white ">Log in </ShimmerButton>
+          <ShimmerButton href='/signup' className="text-white ">Register </ShimmerButton>
+          <ShimmerButton href='/login' className="text-white ">Log in </ShimmerButton>
         </div>
       </div>
     </div>
