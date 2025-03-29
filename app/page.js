@@ -3,8 +3,9 @@ import CTA from "@/components/cta";
 import FeaturingPets from "@/components/ui/FeaturingPets";
 import { Highlight, HeroHighlight } from "@/components/ui/Highlight";
 import HomeMagicCard from "@/components/ui/HomeMagicCard";
-import { MagicCard } from "@/components/ui/magicCard";
+import MouseMoveEffect from "@/components/ui/mouseEffect";
 import TestimotinalCard from "@/components/ui/TestimotinalCard";
+import Image from "next/image";
 
 
 
@@ -12,9 +13,9 @@ export default function Home() {
   return (
     <div className=" flex flex-col items-center justify-items-center font-[family-name:var(--font-geist-sans)]">
     {/* <AbortController></AbortController> */}
-
-      <div className="flex  gap-4 items-center justify-center w-full min-h-screen my-4">
-        <HeroHighlight>
+<MouseMoveEffect/>
+      <div className="flex  gap-4 items-center justify-center w-full min-h-screen ">
+        <HeroHighlight className={'flex '}>
           <CTA />
         </HeroHighlight>
       </div>

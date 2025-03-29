@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import React from "react";
+import Image from "next/image";
 
 export const HeroHighlight = ({
   children,
@@ -29,10 +30,20 @@ export const HeroHighlight = ({
         containerClassName
       )}
       onMouseMove={handleMouseMove}>
-      <div
-        className="absolute inset-0 bg-dot-thick-purple-800  pointer-events-none" />
+      {/* Background Image */}
+      <div className="absolute inset-0 overflow-hidden">
+        <Image 
+          src="/assets/image/home2.jpg" 
+          alt="Background" 
+          fill 
+          priority
+          className="object-cover "
+        />
+        <div className="absolute inset-0 " />
+      </div>
+      
       <motion.div
-        className="pointer-events-none bg-dot-thick-purple-500   absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
+        className="pointer-events-none bg-dot-thick-white absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
           WebkitMaskImage: useMotionTemplate`
             radial-gradient(
@@ -77,7 +88,7 @@ export const Highlight = ({
         display: "inline",
       }}
       className={cn(
-        `relative inline-block pb-1   px-1 rounded-lg bg-gradient-to-r  from-pink-500 to-red-500`,
+        `relative inline-block pb-1 px-1 rounded-lg bg-gradient-to-r from-pink-500 to-red-500`,
         className
       )}>
       {children}
