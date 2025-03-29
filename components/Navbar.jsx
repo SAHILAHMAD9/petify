@@ -1,8 +1,12 @@
 "use client"
 import Link from 'next/link'
 import ShimmerButton from "./ui/Button";
-
+import { useAuth, UserButton, useSignIn } from '@clerk/nextjs';
 export const Navbar = () => {
+  const { userId, sessionId, getToken, isLoaded, isSignedIn } = useAuth();
+  // console.log(isSignedIn);
+  
+  
   return (
     <div className="flex flex-wrap z-[9999] sticky top-0 items-center min-w-full justify-between bg-gradient-to-r to-[#A1B4C8] from-[#202c54] md:p-3 p-2">
       {/* Logo Section */}
@@ -41,8 +45,16 @@ export const Navbar = () => {
         {/* Buttons Section */}
         <div className="flex relative px-6 gap-2 sm:gap-4 items-center sm:mt-0">
           {/* Sign Up Button Placeholder */}
-          <ShimmerButton href='/signup' className="text-white ">Register </ShimmerButton>
-          <ShimmerButton href='/login' className="text-white ">Log in </ShimmerButton>
+          {isSignedIn ?
+            <>
+              <ShimmerButton href='/' className="text-white ">Home </ShimmerButton>
+              <ShimmerButton href='/login' className="text-white ">Log out </ShimmerButton>
+              <UserButton/>
+            </> :
+            <>
+              <ShimmerButton href='/signup' className="text-white ">Register </ShimmerButton>
+              <ShimmerButton href='/login' className="text-white ">Log in </ShimmerButton>
+          </>}
         </div>
       </div>
     </div>
