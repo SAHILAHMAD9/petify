@@ -14,7 +14,7 @@ const FeaturingPets = () => {
               View All <ArrowRight className="h-4 w-4" />
             </Button> */}
               </div>
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-3 gap-4 md:gap-8">
                   <EnhancedPetCard
                       image="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3"
                       name="Whiskers"

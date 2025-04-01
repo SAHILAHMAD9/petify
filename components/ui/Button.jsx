@@ -5,6 +5,7 @@ import Link from "next/link";
 export const ShimmerButton = forwardRef(
   (
     {
+      header,
       shimmerColor = "#ffffff",
       shimmerSize = "0.05em",
       shimmerDuration = "3s",
@@ -29,7 +30,7 @@ export const ShimmerButton = forwardRef(
             "--bg": background,
           }}
           className={cn(
-            "group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap border border-white/10 px-6 py-3 [background:var(--bg)] [border-radius:var(--radius)] text-black",
+            `group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap border border-white/10 ${header ? " px-4 py-2 md:px-6 md:py-3" : "px-6 py-3"} [background:var(--bg)] [border-radius:var(--radius)] text-black`,
             "transform-gpu transition-transform duration-300 ease-in-out active:translate-y-px",
             className
           )}
