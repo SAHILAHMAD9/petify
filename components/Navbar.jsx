@@ -8,7 +8,7 @@ export const Navbar = () => {
   
   
   return (
-    <div className="flex flex-wrap z-[9999] sticky top-0 items-center min-w-full justify-between bg-gradient-to-r to-[#A1B4C8] from-[#202c54] md:p-3 p-2">
+    <div className="flex flex-wrap z-[9999] sticky top-0 items-center min-w-full justify-between bg-gradient-to-r to-[#102542] from-[#102542] md:p-3 py-2">
       {/* Logo Section */}
       <Link href='/'>
         <div className="flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-bold relative">
@@ -43,17 +43,17 @@ export const Navbar = () => {
       <div className="flex flex-row items-center justify-between relative">
         <div className="flex top-0 left-0"></div>
         {/* Buttons Section */}
-        <div className="flex relative px-6 gap-2 sm:gap-4 items-center sm:mt-0">
+        <div className="flex relative px-2 md:px-6 gap-2 sm:gap-4 items-center sm:mt-0">
           {/* Sign Up Button Placeholder */}
           {isSignedIn ?
             <>
-              <ShimmerButton href='/' className="text-white ">Home </ShimmerButton>
-              <ShimmerButton href='/login' className="text-white ">Log out </ShimmerButton>
+              <ShimmerButton header={true} href='/' className="text-white ">Home </ShimmerButton>
+              <ShimmerButton header={true} href='/login' className="text-white ">Log out </ShimmerButton>
               <UserButton/>
             </> :
             <>
-              <ShimmerButton href='/signup' className="text-white ">Register </ShimmerButton>
-              <ShimmerButton href='/login' className="text-white ">Log in </ShimmerButton>
+              <ShimmerButton header={true} href='/signup' className="text-white ">Register </ShimmerButton>
+              <ShimmerButton header={true} href='/login' className="text-white ">Log in </ShimmerButton>
           </>}
         </div>
       </div>
