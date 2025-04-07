@@ -1,18 +1,28 @@
+'use client'
 import React from 'react'
 import EnhancedPetCard from "@/components/ui/Petcard";
-
+import { motion } from "framer-motion";
+import Link from 'next/link';
 const FeaturingPets = () => {
   return (
       <section className="py-24 w-full z-0 bg-white">
           <div className="mx-auto px-4">
               <div className="flex justify-between items-center mb-16">
-                  <div className='flex justify-center items-center flex-col '>
+                  <motion.div initial={{ opacity: 0, x: -90 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }} className='flex justify-center items-start flex-col '>
                       <h2 className="text-4xl md:text-5xl text-black font-bold mb-4">Featured Pets</h2>
                       <p className="text-black text-xl">Meet our adorable friends waiting for a home</p>
-                  </div>
-                  {/* <Button variant="outline" size="lg" className="gap-2">
-              View All <ArrowRight className="h-4 w-4" />
-            </Button> */}
+                  </motion.div>
+                  <Link href={'/home'}>
+                      <motion.button
+                          initial={{ opacity: 0, x: 90 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: 0.2 }}
+                          className="w-full sm:w-auto text-white rounded-3xl py-2 px-4 sm:px-5 font-bold text-sm sm:text-base lg:text-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 order-1 sm:order-2">
+                          View More
+                      </motion.button>
+                  </Link>
               </div>
               <div className="grid md:grid-cols-3 gap-4 md:gap-8">
                   <EnhancedPetCard

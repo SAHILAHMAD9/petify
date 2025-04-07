@@ -72,9 +72,9 @@ const Page = () => {
     };
 
     return (
-        <div className="min-h-screen flex justify-center items-center min-w-[1080px]">
+        <div className="min-h-screen flex justify-center items-center min-w-[90vw] md:min-w-[1080px]">
             <div className="shadow-input mx-auto w-full relative bg-[#ffffff] max-w-md p-4 rounded-xl md:p-8">
-                <Image width={450} height={200} alt="welcomPets" className="rounded-t-xl absolute left-0 -top-[88px]" src='/assets/image/signupImage.jpeg' />
+                <Image width={450} height={200} alt="welcomPets" className="rounded-t-xl absolute left-0 -top-[20vw] md:-top-[88px]" src='/assets/image/signupImage.jpeg' />
                 <h2 className="text-xl font-bold text-neutral-800 ">
                     Welcome Back
                 </h2>
@@ -102,7 +102,7 @@ const Page = () => {
                     
                     <LabelInputContainer className="mb-4">
                         <Label htmlFor="password">Password</Label>
-                        <Input 
+                        <Input
                             id="password" 
                             placeholder="••••••••" 
                             type={showPassword ? 'text' : 'password'}
