@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="relative min-h-screen bg-[#f0faff] flex flex-col">
+        <div className="relative min-h-screen bg-[#f0faff] overflow-x-hidden flex flex-col">
           {/* <MouseMoveEffect /> */}
           <div className=" z-0 fixed inset-0">
             <div className="absolute inset-0 bg-[#f0faff] " />

@@ -11,7 +11,7 @@ export const Navbar = () => {
     <div className="flex flex-wrap z-[9999] sticky top-0 items-center min-w-full justify-between bg-gradient-to-r to-[#102542] from-[#102542] md:p-3 py-2">
       {/* Logo Section */}
       <Link href='/'>
-        <div className="flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-bold relative">
+        <div className="flex items-center justify-center text-2xl sm:text-3xl md:text-4xl px-2  font-bold relative">
           {/* Paw Icon with Higher Z-index */}
           <span className="z-50">
             <svg
