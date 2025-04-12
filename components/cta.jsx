@@ -18,14 +18,14 @@ const CTA = function () {
           Ready to Find a New Home for Your Pet?
           </motion.h2>
         </Highlight>
-        <motion.p
+        {/* <motion.p
           className="text-sm md:text-xl text-[#0f172a] rounded-md mb-8 bg-[#ffffff] p-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           Buy, sell, or adopt pets safely. Connect with verified breeders, sellers, and rescue centers in your area.
-        </motion.p>
+        </motion.p> */}
         <Highlight className="text-md md:text-2xl font-bold p-2 text-white">
         Make a purr-fect connection today!
         </Highlight>

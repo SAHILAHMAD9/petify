@@ -2,12 +2,11 @@
 import React, { useState, useEffect } from 'react'
 import Label from '@/components/ui/Label';
 import Input from '@/components/ui/Input';
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from 'next/image';
-import { OAuthStrategy } from '@clerk/types'
 import { useSignIn, useUser } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 const Page = () => {
     const router = useRouter();
@@ -22,11 +21,12 @@ const Page = () => {
     // Redirect if user is already signed in
     useEffect(() => {
         if (isLoaded && isSignedIn) {
+            toast.success('YAAAHOOOO! We Are In')
             router.push('/');
         }
     }, [isLoaded, isSignedIn, router]);
 
-    if (!isSignInLoaded) return <div className="min-h-screen flex justify-center items-center">Loading...</div>;
+    if (!isSignInLoaded) return <div className="min-h-screen flex justify-center items-center text-2xl font-bold text-purple-700">Loading...</div>;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -75,7 +75,7 @@ const Page = () => {
         <div className="min-h-screen flex justify-center items-center min-w-[90vw] md:min-w-[1080px]">
             <div className="shadow-input mx-auto w-full relative bg-[#ffffff] max-w-md p-4 rounded-xl md:p-8">
                 <Image width={450} height={200} alt="welcomPets" className="rounded-t-xl absolute left-0 -top-[20vw] md:-top-[88px]" src='/assets/image/signupImage.jpeg' />
-                <h2 className="text-xl font-bold text-neutral-800 ">
+                <h2 className="text-xl font-bold text-purple-800 ">
                     Welcome Back
                 </h2>
                 <p className="mt-2 max-w-sm text-sm text-neutral-600 ">

@@ -6,9 +6,8 @@ export const Navbar = () => {
   const { userId, sessionId, getToken, isLoaded, isSignedIn } = useAuth();
   // console.log(isSignedIn);
   
-  
   return (
-    <div className="flex flex-wrap z-[9999] sticky top-0 items-center min-w-full justify-between bg-gradient-to-r to-[#102542] from-[#102542] md:p-3 py-2">
+    <div className="flex flex-wrap z-10 sticky top-0 items-center min-w-full justify-between bg-gradient-to-r to-[#102542] from-[#102542] md:p-3 py-2">
       {/* Logo Section */}
       <Link href='/'>
         <div className="flex items-center justify-center text-2xl sm:text-3xl md:text-4xl px-2  font-bold relative">
