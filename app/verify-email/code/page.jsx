@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Label from '@/components/ui/Label';
 import Input from '@/components/ui/Input';
 import { cn } from "@/lib/utils";
+import toast from 'react-hot-toast';
 
 const VerifyCodePage = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
@@ -15,7 +16,13 @@ const VerifyCodePage = () => {
   const router = useRouter();
 
   if (!isLoaded || !signUp) {
-    return <div className="min-h-screen flex justify-center items-center">Loading...</div>;
+    return <div className="min-h-screen flex  justify-center items-center">
+      <div className="container mx-auto px-4 z-10 py-12 text-center">
+        <div className="animate-pulse h-6 w-24 bg-neutral-200 rounded">
+          <p className="text-2xl font-bold text-purple-700">Loading...</p>
+        </div>
+      </div>
+    </div>;
   }
 
   const verifyCode = async (e) => {
@@ -32,6 +39,7 @@ const VerifyCodePage = () => {
         setVerificationStatus('complete');
         // Set the active session
         await setActive({ session: result.createdSessionId });
+        toast.success("Into The Game Now!")
         setTimeout(() => {
           router.push('/');
         }, 2000);
@@ -53,6 +61,7 @@ const VerifyCodePage = () => {
         strategy: 'email_code',
       });
       setVerificationStatus('sent');
+      toast.success("Verification Code resent Sucessfully!")
     } catch (err) {
       console.error('Error sending verification email:', err);
       setError(err.errors?.[0]?.message || 'Failed to send verification email');

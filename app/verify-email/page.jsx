@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { cn } from "@/lib/utils";
 import Link from 'next/link';
+import toast from 'react-hot-toast';
 
 const VerifyEmailPage = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
@@ -65,6 +66,7 @@ const VerifyEmailPage = () => {
         strategy: 'email_code',
       });
       setVerificationStatus('sent');
+      toast.success("Verification Code resent Sucessfully!")
     } catch (err) {
       console.error('Error sending verification email:', err);
       setError(err.errors?.[0]?.message || 'Failed to send verification email');
@@ -73,7 +75,7 @@ const VerifyEmailPage = () => {
   };
 
   if (!isLoaded) {
-    return <div className="min-h-screen flex justify-center items-center">Loading...</div>;
+    return <div className="min-h-screen flex text-2xl font-bold text-purple-700 justify-center items-center">Loading...</div>;
   }
 
   return (

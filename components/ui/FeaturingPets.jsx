@@ -3,16 +3,17 @@ import React from 'react'
 import EnhancedPetCard from "@/components/ui/Petcard";
 import { motion } from "framer-motion";
 import Link from 'next/link';
+
 const FeaturingPets = () => {
   return (
       <section className="py-24 w-full z-0 rounded-lg bg-white">
           <div className="mx-auto px-4">
-              <div className="flex justify-between items-center flex-col md:flex-row mb-5 md:mb-16">
+              <div className="flex gap-2 justify-between items-center flex-col md:flex-row mb-5 md:mb-16">
                   <motion.div initial={{ opacity: 0, x: -90 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: 0.2 }} className='flex justify-center items-start flex-col '>
-                      <h2 className="text-4xl md:text-5xl text-black font-bold mb-4">Featured Pets</h2>
-                      <p className="text-black text bg-center text-xl">Meet our adorable friends waiting for a home</p>
+                      transition={{ duration: 0.5, delay: 0.2 }} className='flex justify-center items-center xl:items-start flex-col '>
+                      <h2 className="text-4xl md:text-5xl text-purple-700 font-bold mb-4">Featured Pets</h2>
+                      <p className="text-purple-600 text-center bg-center text-xl">Meet our adorable friends waiting for a home</p>
                   </motion.div>
                   <Link href={'/home'}>
                       <motion.button
@@ -24,8 +25,9 @@ const FeaturingPets = () => {
                       </motion.button>
                   </Link>
               </div>
-              <div className="grid md:grid-cols-3 gap-4 md:gap-8">
+              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 xl:gap-8">
                   <EnhancedPetCard
+                      id="whiskers"
                       image="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3"
                       name="Whiskers"
                       type="Cat"
@@ -35,6 +37,7 @@ const FeaturingPets = () => {
                       price="Free to Good Home"
                   />
                   <EnhancedPetCard
+                      id='rocky'
                       image="https://images.unsplash.com/photo-1587764379873-97837921fd44?ixlib=rb-4.0.3"
                       name="Rocky"
                       type="Dog"
@@ -44,6 +47,7 @@ const FeaturingPets = () => {
                       price="$500"
                   />
                   <EnhancedPetCard
+                      id='luna'
                       image="https://images.unsplash.com/photo-1548767797-d8c844163c4c?ixlib=rb-4.0.3"
                       name="Luna"
                       type="Cat"

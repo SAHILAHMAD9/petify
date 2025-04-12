@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useSignUp, useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const Page = () => {
     const router = useRouter();
@@ -24,11 +25,12 @@ const Page = () => {
     // Redirect if user is already signed in
     useEffect(() => {
         if (isLoaded && isSignedIn) {
+            toast.success('Already SignUp');
             router.push('/');
         }
     }, [isLoaded, isSignedIn, router]);
 
-    if (!isSignUpLoaded) return <div className="min-h-screen flex justify-center items-center">Loading...</div>;
+    if (!isSignUpLoaded) return <div className="min-h-screen flex text-purple-700 z-10 text-2xl font-bold justify-center items-center">Loading...</div>;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -55,6 +57,7 @@ const Page = () => {
                 });
                 
                 // Redirect to verification page
+                toast.success("Verification Code send to your registered email")
                 router.push('/verify-email');
             }
         } catch (err) {
@@ -93,7 +96,7 @@ const Page = () => {
         <div className="min-h-screen flex flex-col justify-center items-center min-w-[90vw] md:min-w-[1080px]">
             <div className="shadow-input mx-auto w-full relative bg-[#ffffff] max-w-md  p-4 rounded-xl md:p-8">
                 <Image width={450} height={200} alt="WelcomPets" className="rounded-t-xl absolute left-0   -top-[20vw] md:-top-[88px]" src='/assets/image/signupImage.jpeg'/>
-                <h2 className="text-xl font-bold text-neutral-800">
+                <h2 className="text-2xl font-bold text-purple-800">
                     Welcome to Petify
                 </h2>
                 <p className="mt-2 max-w-sm text-sm text-neutral-600">

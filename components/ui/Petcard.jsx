@@ -1,6 +1,8 @@
+'use client'
 import React from 'react';
+import Link from 'next/link';
 
-const EnhancedPetCard = ({ image, name, type, breed, age, location, price }) => {
+const EnhancedPetCard = ({ image, name, type, breed, age, location, price, id }) => {
     return (
         <div className="group container mx-auto bg-white text-black rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all max-w-sm md:max-w-md lg:max-w-lg">
             <div className="h-48 sm:h-52 md:h-64 lg:h-72 overflow-hidden relative">
@@ -14,7 +16,7 @@ const EnhancedPetCard = ({ image, name, type, breed, age, location, price }) => 
             <div className="p-3 sm:p-4 md:p-6 lg:p-8">
                 <div className="flex flex-col sm:flex-row justify-between sm:items-start mb-2 sm:mb-4">
                     <div>
-                        <h3 className="text-xl sm:text-2xl font-semibold mb-1 sm:mb-2">{name}</h3>
+                        <h3 className="text-xl sm:text-2xl font-semibold text-purple-700 mb-1 sm:mb-2">{name}</h3>
                         <p className="text-gray-600 text-sm sm:text-base">{breed}</p>
                     </div>
                     <span className="px-3 py-1 sm:px-4 sm:py-2 bg-purple-100 text-purple-600 rounded-full text-xs sm:text-sm font-medium mt-2 sm:mt-0 self-start">
@@ -61,11 +63,13 @@ const EnhancedPetCard = ({ image, name, type, breed, age, location, price }) => 
                         <span className="text-sm sm:text-base">{location}</span>
                     </div>
                 </div>
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pt-3 border-t">
-                    <span className="font-semibold text-base sm:text-lg text-purple-600 order-2 sm:order-1">{price}</span>
-                    <button className="w-full sm:w-auto text-white rounded-3xl py-2 px-4 sm:px-5 font-bold text-sm sm:text-base lg:text-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 order-1 sm:order-2">
-                        View Details
-                    </button>
+                <div className="flex flex-col sm:flex-row sm:justify-between justify-center items-center gap-3 pt-3 border-t">
+                    <span className="font-semibold text-base sm:text-lg text-purple-600 order-2 sm:order-1">Free to Good Home</span>
+                    <Link href={`/home/${id}`} className="w-full sm:w-auto order-1 sm:order-2">
+                        <button className="w-full text-white rounded-3xl py-2 px-4 sm:px-5 font-bold text-sm sm:text-base lg:text-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+                            View Details
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
