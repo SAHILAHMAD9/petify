@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 import Link from 'next/link';
 const FeaturingPets = () => {
   return (
-      <section className="py-24 w-full z-0 bg-white">
+      <section className="py-24 w-full z-0 rounded-lg bg-white">
           <div className="mx-auto px-4">
-              <div className="flex justify-between items-center mb-16">
+              <div className="flex justify-between items-center flex-col md:flex-row mb-5 md:mb-16">
                   <motion.div initial={{ opacity: 0, x: -90 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.2 }} className='flex justify-center items-start flex-col '>
                       <h2 className="text-4xl md:text-5xl text-black font-bold mb-4">Featured Pets</h2>
-                      <p className="text-black text-xl">Meet our adorable friends waiting for a home</p>
+                      <p className="text-black text bg-center text-xl">Meet our adorable friends waiting for a home</p>
                   </motion.div>
                   <Link href={'/home'}>
                       <motion.button
