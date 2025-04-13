@@ -20,6 +20,7 @@ function AdoptionForm() {
     const { isSignedIn, user, isLoaded } = useUser();
     const [submitted, setSubmitted] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+
     const [form, setForm] = useState({
         fullName: "",
         email: "",
@@ -27,23 +28,22 @@ function AdoptionForm() {
     });
 
     useEffect(() => {
-        if (isLoaded) {
-            const updatedForm = {
-                fullName: user?.fullName || "",
-                email: user?.primaryEmailAddress?.emailAddress || "",
-                petname: petName || ""
-            };
-            setForm(updatedForm);
-            setIsLoading(false);
-        }
-    }, [isLoaded, user, petName]);
+        if (!isLoaded) return;
 
-    const changeHandler = (e) => {
-        setForm(prevForm => ({
-            ...prevForm,
-            [e.target.id]: e.target.value
-        }));
-    };
+        if (!isSignedIn) {
+            toast.error('Please sign in to continue');
+            router.push('/login');
+            return;
+        }
+
+        const updatedForm = {
+            fullName: user?.fullName || "",
+            email: user?.primaryEmailAddress?.emailAddress || "",
+            petname: petName || ""
+        };
+        setForm(updatedForm);
+        setIsLoading(false);
+    }, [isLoaded, isSignedIn, user, petName, router]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -54,6 +54,7 @@ function AdoptionForm() {
             setIsSubmitting(false);
             return;
         }
+
         try {
             const istDate = new Date().toLocaleString('en-GB', { timeZone: 'Asia/Kolkata' }).replace(',', '');
 
@@ -68,13 +69,14 @@ function AdoptionForm() {
                     Pet Name: ${form.petname}
                     Applicant Name: ${form.fullName}
                     Applicant Email: ${form.email}
-                    Submission Date (UTC): ${istDate}
+                    Submission Date: ${istDate}
                     User ID: ${user?.id || 'Not signed in'}
                     
                     This is an automated message from your Pet Adoption System.
                 `,
                 reply_to: form.email
             };
+
             const response = await emailjs.send(
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
@@ -82,8 +84,6 @@ function AdoptionForm() {
             );
 
             if (response.status === 200) {
-                console.log("email chla gya");
-
                 toast.success('Adoption request submitted successfully!');
                 setSubmitted(true);
                 localStorage.setItem('adoptionSubmission', JSON.stringify({
@@ -91,16 +91,20 @@ function AdoptionForm() {
                     submittedAt: istDate
                 }));
             }
-
         } catch (error) {
             console.error('Submission error:', error);
-            console.log("email  nnhi  gya");
             toast.error('Failed to submit adoption request. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
     };
 
+    const changeHandler = (e) => {
+        setForm(prevForm => ({
+            ...prevForm,
+            [e.target.id]: e.target.value
+        }));
+    };
 
     return (
         <div className="shadow-input mx-auto w-full relative bg-[#ffffff] max-w-md p-4 rounded-xl md:p-8">
