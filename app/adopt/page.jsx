@@ -17,27 +17,6 @@ const Page = () => {
     const [isLoading, setIsLoading] = useState(true);
     const { isSignedIn, user, isLoaded } = useUser();
 
-    const [form, setForm] = useState({
-        fullName: "",
-        email: "",
-        petname: "",
-    });
-
-    useEffect(() => {
-        // console.log('Card ID:', cardId);
-
-        if (isLoaded) {
-            const updatedForm = {
-                fullName: user?.fullName || "",
-                email: user?.primaryEmailAddress?.emailAddress || "",
-                petname: cardId || ""
-            };
-            // console.log('Updating form with:', updatedForm);
-            setForm(updatedForm);
-            setIsLoading(false);
-        }
-    }, [isLoaded, user, cardId]);
-
     useEffect(() => {
         if (isLoaded && !isSignedIn) {
             toast.error('Please sign in to continue');
