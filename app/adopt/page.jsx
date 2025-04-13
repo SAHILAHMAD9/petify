@@ -4,6 +4,7 @@ export const dynamic = 'force-dynamic';
 import React, { Suspense } from 'react';
 import AdoptionForm from '@/components/ui/AdoptionForm';
 import { Toaster } from 'react-hot-toast';
+import Loading from '@/components/ui/Loading';
 
 export default function Page() {
     return (
@@ -15,16 +16,3 @@ export default function Page() {
         </div>
     );
 }
-
-function Loading() {
-    return (
-        <div className="shadow-input mx-auto w-full relative bg-[#ffffff] max-w-md p-4 rounded-xl md:p-8">
-            <div className="my-8 flex flex-col gap-4">
-                <div className="animate-pulse h-6 w-full bg-neutral-200 rounded"></div>
-                <div className="animate-pulse h-6 w-full bg-neutral-200 rounded"></div>
-                <div className="animate-pulse h-6 w-full bg-neutral-200 rounded"></div>
-            </div>
-        </div>
-    );
-}
-
