@@ -87,24 +87,24 @@ const Page = () => {
                             {error}
                         </div>
                     )}
-                    
+
                     <LabelInputContainer className="mb-4">
                         <Label htmlFor="email">Email Address</Label>
-                        <Input 
-                            id="email" 
-                            placeholder="petify@gmail.com" 
+                        <Input
+                            id="email"
+                            placeholder="petify@gmail.com"
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            required 
+                            required
                         />
                     </LabelInputContainer>
-                    
+
                     <LabelInputContainer className="mb-4">
                         <Label htmlFor="password">Password</Label>
                         <Input
-                            id="password" 
-                            placeholder="••••••••" 
+                            id="password"
+                            placeholder="••••••••"
                             type={showPassword ? 'text' : 'password'}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
@@ -113,18 +113,24 @@ const Page = () => {
                     </LabelInputContainer>
 
                     <button
-                        className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+                        className="group/btn relative block h-10 w-full rounded-md font-medium text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:opacity-50"
                         type="submit"
                         disabled={isLoading}
                     >
-                        {isLoading ? 'Logging in...' : 'Log In'} &rarr;
+                        {isLoading ? <span className="flex items-center justify-center">
+                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Logging In...
+                        </span> : <>Log In &rarr;</>}
                         <BottomGradient />
                     </button>
 
                     <div
                         className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
 
-                    <div className="flex flex-col space-y-4">
+                    {/* <div className="flex flex-col space-y-4">
                         <button
                             type="button"
                             disabled={true}
@@ -136,7 +142,7 @@ const Page = () => {
                             </span>
                             <BottomGradient />
                         </button>
-                    </div>
+                    </div> */}
                 </form>
             </div>
             {/* <div className='flex justify-center items-center'>
