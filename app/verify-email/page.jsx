@@ -1,12 +1,21 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+export const dynamic = 'force-dynamic';
+import React, { Suspense, useEffect, useState } from 'react';
 import { useSignUp } from '@clerk/nextjs';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { cn } from "@/lib/utils";
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+import Loading from '@/components/ui/Loading';
 
+export default function Page() {
+  return (
+    <Suspense fallback={<Loading/>}>
+      <VerifyEmailPage />
+    </Suspense>
+  );
+}
 const VerifyEmailPage = () => {
   const { isLoaded, signUp, setActive } = useSignUp();
   const [verificationStatus, setVerificationStatus] = useState('pending');
@@ -137,8 +146,6 @@ const VerifyEmailPage = () => {
     </div>
   );
 };
-
-export default VerifyEmailPage;
 
 const BottomGradient = () => {
   return (
