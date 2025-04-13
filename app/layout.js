@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { ClerkProvider,} from '@clerk/nextjs'
 import { Toaster } from "react-hot-toast";
-
+import { Analytics } from '@vercel/analytics/next';
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -44,7 +44,9 @@ export default function RootLayout({ children }) {
             <div className="absolute bottom-0 left-0 h-[500px] w-[500px] bg-[#ceefce] blur-[100px]" />
             </div>
             <Navbar />
-            <main className="flex items-center z-10 justify-center min-h-screen">{children}</main>
+            <main className="flex items-center z-10 justify-center min-h-screen">{children}
+              <Analytics />
+            </main>
           <Footer />
          
         </div>
