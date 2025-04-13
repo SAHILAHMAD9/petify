@@ -66,7 +66,7 @@ const Page = () => {
             return;
         }
         try {
-            const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
+            const istDate = new Date().toLocaleString('en-GB', { timeZone: 'Asia/Kolkata' }).replace(',', '');
 
             const templateParams = {
                 to_name: "Support Team",
